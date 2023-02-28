@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { Bot, HttpError, GrammyError } = require("grammy");
+const { Bot, webhookCallback, HttpError, GrammyError } = require("grammy");
 const request = require("request");
 const path = require("path");
 
@@ -213,4 +213,4 @@ bot.catch((err) => {
 
 // Run
 
-bot.start();
+export default webhookCallback(bot, "http");
